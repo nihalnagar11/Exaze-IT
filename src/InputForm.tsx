@@ -44,7 +44,7 @@ const InputForm = ({ count, addTodo, deleteTodo, todo_list, changeCount }: any) 
                 backgroundColor: '#2196F3',
             }}>
                 <Text style={styles.header}>
-                    {count}
+                    Home
                 </Text>
             </View>
             <View style={styles.container}>

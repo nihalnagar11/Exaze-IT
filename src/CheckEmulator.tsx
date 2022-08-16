@@ -6,8 +6,13 @@ import {
   Button,
   StyleSheet, StatusBar, View
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import { useNavigation } from '@react-navigation/native';
 
 const CheckEmulator = ({ route }:any) => {
+  
+
+  const navigation = useNavigation();
   // our custom method
   const { ReactOneCustomMethod } = NativeModules;
 
@@ -36,6 +41,8 @@ const CheckEmulator = ({ route }:any) => {
         flexDirection: 'row', width: '100%', height: '10%',
         backgroundColor: '#2196F3',
       }}>
+          <Icon name="angle-left" size={25} color="white" style={{ marginTop: '10%', marginLeft: '5%' }} onPress={() => { navigation.goBack(); }} />
+              
         <Text style={styles.header}>
           {item}
         </Text>

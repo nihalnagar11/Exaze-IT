@@ -3,10 +3,15 @@ import { Button, View, TouchableOpacity, Text, StyleSheet, StatusBar, Image, Ale
 import { RNSlidingButton, SlideDirection } from 'rn-sliding-button'; 
 import { connect } from 'react-redux';
 import { addTodo, deleteTodo, changeCount } from './redux/actions';
+import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 
 
 const ButtonScreen = ({ count,}:any) => {
+
+    
+  const navigation = useNavigation();
 
     // use in your class
     const onSlideRight = () => {
@@ -28,7 +33,11 @@ const ButtonScreen = ({ count,}:any) => {
     return (
         <View style={{ height: '100%' }}>
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor="#2196F3" translucent={true} />
-            <View>
+            <View style={{
+        flexDirection: 'row', width: '100%', height: '10%',
+        backgroundColor: '#2196F3',}}>
+            <Icon name="angle-left" size={25} color="white" style={{ marginTop: '10%', marginLeft: '5%' }} onPress={() => { navigation.goBack(); }} />
+       
                 <Text style={styles.header}>
                     {count}
                 </Text>
@@ -127,11 +136,12 @@ const styles = StyleSheet.create({
         padding: 15,
         backgroundColor: '#2196F3',
         color: 'white',
-        textAlign: 'center',
+        // textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',
-        marginTop: '7%',
-        marginBottom: '30%'
+        marginTop: '6%',
+        // marginBottom: '30%'
+        marginLeft:'30%'
     },
     titleText: {
         fontSize: 17,

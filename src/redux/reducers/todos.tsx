@@ -2,7 +2,7 @@ import { ADD_TODO, DELETE_TODO, COUNTER_CHANGE } from "../actionTypes";
 
 const initialState = {
     todo_list: [],
-    count: 'nhl',
+    count: 'Home',
     username: '',
 };
 
